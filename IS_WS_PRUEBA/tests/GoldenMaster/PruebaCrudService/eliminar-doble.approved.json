@@ -1,0 +1,12 @@
+{
+  "firstDelete": {
+    "codigo": "000",
+    "mensaje": "Registro eliminado.",
+    "listaCamposSalida": []
+  },
+  "secondDelete": {
+    "codigo": "001",
+    "mensaje": "Registro ya eliminado.",
+    "listaCamposSalida": []
+  }
+}

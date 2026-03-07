@@ -1,0 +1,7 @@
+{
+  "actualizarSinCampos": {
+    "codigo": "001",
+    "mensaje": "No update fields provided.",
+    "listaCamposSalida": []
+  }
+}

@@ -1,0 +1,37 @@
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <soap:Body>
+      <CalcularOfertaCrediticiaLegacyResponse xmlns="http://legacy.projectia.local/soap/IS_WS_PRUEBA/v1">
+         <CalcularOfertaCrediticiaLegacyResult>
+            <codigo>000</codigo>
+            <mensaje>000|APROBADO|CUOTA=35,956625|CAPACIDAD=420|NIVEL_RIESGO=MEDIO|CUPO=1680|DETALLE=usr=analista_ws|id=1710034068|ing=1200|deuda=600|tasa=2|server=PRUEBA-01|fecha=7/3/2026 12:16:32</mensaje>
+            <listaCamposSalida>
+               <campo>
+                  <name>cuota</name>
+                  <value>35,956625</value>
+                  <type>double</type>
+               </campo>
+               <campo>
+                  <name>capacidad</name>
+                  <value>420</value>
+                  <type>double</type>
+               </campo>
+               <campo>
+                  <name>nivel_riesgo</name>
+                  <value>MEDIO</value>
+                  <type>string</type>
+               </campo>
+               <campo>
+                  <name>cupo</name>
+                  <value>1680</value>
+                  <type>double</type>
+               </campo>
+               <campo>
+                  <name>detalle</name>
+                  <value>usr=analista_ws|id=1710034068|ing=1200|deuda=600|tasa=2|server=PRUEBA-01|fecha=7/3/2026 12:16:32</value>
+                  <type>string</type>
+               </campo>
+            </listaCamposSalida>
+         </CalcularOfertaCrediticiaLegacyResult>
+      </CalcularOfertaCrediticiaLegacyResponse>
+   </soap:Body>
+</soap:Envelope>

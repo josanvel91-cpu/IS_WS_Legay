@@ -1,0 +1,49 @@
+{
+  "create": {
+    "codigo": "000",
+    "mensaje": "Registro creado.",
+    "listaCamposSalida": [
+      {
+        "name": "id",
+        "value": "1",
+        "type": "int"
+      }
+    ]
+  },
+  "consultar": {
+    "codigo": "000",
+    "mensaje": "Consulta exitosa.",
+    "listaCamposSalida": [
+      {
+        "name": "id",
+        "value": "1",
+        "type": "int"
+      },
+      {
+        "name": "nombre",
+        "value": "Empresa Legacy",
+        "type": "string"
+      },
+      {
+        "name": "descripcion",
+        "value": "Descripcion inicial",
+        "type": "string"
+      },
+      {
+        "name": "fecha_fundacion",
+        "value": "2020-05-01",
+        "type": "datetime"
+      },
+      {
+        "name": "activo",
+        "value": "true",
+        "type": "bool"
+      },
+      {
+        "name": "fecha_actualizacion",
+        "value": "<UTC_TIMESTAMP>",
+        "type": "datetime"
+      }
+    ]
+  }
+}

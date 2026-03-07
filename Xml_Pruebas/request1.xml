@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+               xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+  <soap:Body>
+    <CalcularOfertaCrediticiaLegacy xmlns="http://legacy.projectia.local/soap/IS_WS_PRUEBA/v1">
+      <request>
+        <listaCampos>
+          <campo><name>identificacion_cliente</name><value>1710034068</value><type>string</type></campo>
+          <campo><name>ingreso_mensual</name><value>1200</value><type>string</type></campo>
+          <campo><name>deuda_actual</name><value>600</value><type>string</type></campo>
+          <campo><name>plazo_meses</name><value>24</value><type>int</type></campo>
+          <campo><name>tasa_interes_mensual</name><value>2</value><type>string</type></campo>
+          <campo><name>incluye_seguro</name><value>S</value><type>string</type></campo>
+          <campo><name>usuario_ejecutor</name><value>analista_ws</value><type>string</type></campo>
+          <campo><name>tipo_cliente</name><value>N</value><type>string</type></campo>
+          <campo><name>estado</name><value>A</value><type>string</type></campo>
+          <campo><name>edad</name><value>35</value><type>int</type></campo>
+        </listaCampos>
+      </request>
+    </CalcularOfertaCrediticiaLegacy>
+  </soap:Body>
+</soap:Envelope>

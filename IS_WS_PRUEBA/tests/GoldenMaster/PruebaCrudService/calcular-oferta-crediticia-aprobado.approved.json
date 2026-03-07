@@ -1,0 +1,33 @@
+{
+  "response": {
+    "codigo": "000",
+    "mensaje": "APROBADO",
+    "listaCamposSalida": [
+      {
+        "name": "cuota",
+        "value": "279.17007291666664",
+        "type": "double"
+      },
+      {
+        "name": "capacidad",
+        "value": "350",
+        "type": "double"
+      },
+      {
+        "name": "nivel_riesgo",
+        "value": "ALTO",
+        "type": "string"
+      },
+      {
+        "name": "cupo",
+        "value": "2800",
+        "type": "double"
+      },
+      {
+        "name": "detalle",
+        "value": "usr=analista01|id=12345678|ing=1000|deuda=6000|tasa=1.5|server=<MACHINE_NAME>|fecha=<LOCAL_TIMESTAMP>",
+        "type": "string"
+      }
+    ]
+  }
+}

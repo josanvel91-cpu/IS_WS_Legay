@@ -1,0 +1,13 @@
+{
+  "response": {
+    "codigo": "000",
+    "mensaje": "APROBADO_MANUAL",
+    "listaCamposSalida": [
+      {
+        "name": "cuota",
+        "value": "265.86458333333326",
+        "type": "double"
+      }
+    ]
+  }
+}

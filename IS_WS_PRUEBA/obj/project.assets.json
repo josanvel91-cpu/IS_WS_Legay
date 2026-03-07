@@ -451,11 +451,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\jose.velez\\Desktop\\JOSANVEL\\NETCORE\\ProjectIA\\NET\\Legacy\\IS_WS_PRUEBA\\IS_WS_PRUEBA.csproj",
+      "projectUniqueName": "C:\\Users\\jose.velez\\Desktop\\JOSANVEL\\NETCORE\\ProjectIA\\NET\\GIT\\IS_WS_Legay\\IS_WS_PRUEBA\\IS_WS_PRUEBA.csproj",
       "projectName": "IS_WS_PRUEBA",
-      "projectPath": "C:\\Users\\jose.velez\\Desktop\\JOSANVEL\\NETCORE\\ProjectIA\\NET\\Legacy\\IS_WS_PRUEBA\\IS_WS_PRUEBA.csproj",
+      "projectPath": "C:\\Users\\jose.velez\\Desktop\\JOSANVEL\\NETCORE\\ProjectIA\\NET\\GIT\\IS_WS_Legay\\IS_WS_PRUEBA\\IS_WS_PRUEBA.csproj",
       "packagesPath": "C:\\Users\\jose.velez\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\jose.velez\\Desktop\\JOSANVEL\\NETCORE\\ProjectIA\\NET\\Legacy\\IS_WS_PRUEBA\\obj\\",
+      "outputPath": "C:\\Users\\jose.velez\\Desktop\\JOSANVEL\\NETCORE\\ProjectIA\\NET\\GIT\\IS_WS_Legay\\IS_WS_PRUEBA\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "UsingMicrosoftNETSdk": false,

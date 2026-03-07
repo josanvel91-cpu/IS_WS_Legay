@@ -44,6 +44,12 @@ namespace Legacy.Services.IS_WS_PRUEBA
             return ExecuteSafely("Eliminar", delegate { return _crudService.Eliminar(request); });
         }
 
+        [WebMethod(Description = "Calculates a legacy credit offer from listaCampos input")]
+        public SoapResponseDto CalcularOfertaCrediticiaLegacy(SoapRequestDto request)
+        {
+            return ExecuteSafely("CalcularOfertaCrediticiaLegacy", delegate { return _crudService.CalcularOfertaCrediticiaLegacy(request); });
+        }
+
         private static SoapResponseDto ExecuteSafely(string operation, Func<SoapResponseDto> action)
         {
             try
