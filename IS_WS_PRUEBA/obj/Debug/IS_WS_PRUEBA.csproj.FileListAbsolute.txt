@@ -1,0 +1,6 @@
+C:\Users\jose.velez\Desktop\JOSANVEL\NETCORE\ProjectIA\NET\Legacy\IS_WS_PRUEBA\obj\Debug\IS_WS_PRUEBA.csproj.AssemblyReference.cache
+C:\Users\jose.velez\Desktop\JOSANVEL\NETCORE\ProjectIA\NET\Legacy\IS_WS_PRUEBA\obj\Debug\IS_WS_PRUEBA.csproj.CoreCompileInputs.cache
+C:\Users\jose.velez\Desktop\JOSANVEL\NETCORE\ProjectIA\NET\Legacy\IS_WS_PRUEBA\bin\IS_WS_PRUEBA.dll
+C:\Users\jose.velez\Desktop\JOSANVEL\NETCORE\ProjectIA\NET\Legacy\IS_WS_PRUEBA\bin\IS_WS_PRUEBA.pdb
+C:\Users\jose.velez\Desktop\JOSANVEL\NETCORE\ProjectIA\NET\Legacy\IS_WS_PRUEBA\obj\Debug\IS_WS_PRUEBA.dll
+C:\Users\jose.velez\Desktop\JOSANVEL\NETCORE\ProjectIA\NET\Legacy\IS_WS_PRUEBA\obj\Debug\IS_WS_PRUEBA.pdb
