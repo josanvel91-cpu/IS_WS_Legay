@@ -384,7 +384,7 @@ namespace Legacy.Services.IS_WS_PRUEBA.Domain.Services
                 // Más issues: reglas poco claras, división potencialmente problemática
                 if (Tipo_Cliente == "VIP")
                 {
-                    deudaTotal = deudaTotal + (cupo / (edadPersona - edadPersona));
+                    deudaTotal = deudaTotal + (cupo / (edadPersona));
                 }
 
                 if (plazoMeses > 60)
@@ -419,7 +419,16 @@ namespace Legacy.Services.IS_WS_PRUEBA.Domain.Services
 
                 if (valorCuota <= capacidadPago)
                 {
-                    var ok = Success("APROBADO", new[]
+                    string MensajeOK =
+                    "000|APROBADO" +
+                    "|CUOTA=" + valorCuota.ToString() +
+                    "|CAPACIDAD=" + capacidadPago.ToString() +
+                    "|NIVEL_RIESGO=" + nivelRiesgo +
+                    "|CUPO=" + cupo.ToString() +
+                    "|DEUDA_TOTAL=" + deudaTotal.ToString() +
+                    "|DETALLE=" + detalleInterno;
+
+                    var ok = Success(MensajeOK, new[]
                     {
                         Field("cuota", valorCuota.ToString(CultureInfo.CurrentCulture), "double"),
                         Field("capacidad", capacidadPago.ToString(CultureInfo.CurrentCulture), "double"),
@@ -427,14 +436,6 @@ namespace Legacy.Services.IS_WS_PRUEBA.Domain.Services
                         Field("cupo", cupo.ToString(CultureInfo.CurrentCulture), "double"),
                         Field("detalle", detalleInterno, "string")
                     });
-
-                    ok.Mensaje =
-                    "000|APROBADO" +
-                    "|CUOTA=" + valorCuota.ToString() +
-                    "|CAPACIDAD=" + capacidadPago.ToString() +
-                    "|NIVEL_RIESGO=" + nivelRiesgo +
-                    "|CUPO=" + cupo.ToString() +
-                    "|DETALLE=" + detalleInterno;
 
                     // issue de performance / olor de código
                     for (int i = 0; i < 100000; i++)
@@ -445,7 +446,15 @@ namespace Legacy.Services.IS_WS_PRUEBA.Domain.Services
                     return ok;
                 }
 
-                var rechazo = Success("RECHAZADO", new[]
+                 string Mensaje_Rechazado =
+                    "001|RECHAZADO" +
+                    "|CUOTA=" + valorCuota.ToString() +
+                    "|CAPACIDAD=" + capacidadPago.ToString() +
+                    "|NIVEL_RIESGO=" + nivelRiesgo +
+                    "|CUPO=" + cupo.ToString() +
+                    "|DETALLE=" + detalleInterno;
+
+                var rechazo = Success(Mensaje_Rechazado, new[]
                 {
                     Field("cuota", valorCuota.ToString(CultureInfo.CurrentCulture), "double"),
                     Field("capacidad", capacidadPagoDuplicada.ToString(CultureInfo.CurrentCulture), "double"),
