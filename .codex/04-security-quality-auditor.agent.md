@@ -226,3 +226,18 @@ Tu ejecución es exitosa si el siguiente agente puede convertir tus hallazgos en
 
 ## Instrucción final de ejecución
 Audita los hotspots del cambio actual y produce un reporte estructurado de vulnerabilidades, issues, duplicación, smells y riesgos de contrato dentro del alcance del feature.
+
+---
+
+## Addendum anti-drift obligatorio
+Entradas adicionales obligatorias:
+- `docs/delta-baseline/08-protected-functional-cases.md`
+- `docs/pr-readiness/00-functional-change-approval.md`
+
+Categoria adicional obligatoria de auditoria: `Deriva funcional protegida`.
+
+Reglas:
+1. comparar comportamiento actual vs `docs/delta-baseline/08-protected-functional-cases.md`
+2. cualquier drift sin `functional-change-approved=true` se clasifica como minimo `ALTO`
+3. si el drift afecta `codigo`, `mensaje`, formula o estructura XML, clasificar como `CRITICO`
+4. incluir hallazgos de drift en `docs/pr-readiness/03-audit-findings.md` con evidencia before/after

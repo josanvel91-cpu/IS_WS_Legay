@@ -161,3 +161,16 @@ Tu ejecución es exitosa si conviertes el reporte del auditor en una secuencia d
 
 ## Instrucción final de ejecución
 Genera un blueprint de remediación priorizado y acotado al cambio actual, minimizando riesgo de regresión y respetando baseline y contrato del repositorio.
+
+---
+
+## Addendum anti-drift obligatorio
+Entradas adicionales obligatorias:
+- `docs/delta-baseline/08-protected-functional-cases.md`
+- `docs/pr-readiness/00-functional-change-approval.md`
+
+El blueprint debe incluir reglas ejecutables de no-deriva funcional:
+1. leer estado de `functional-change-approved`; default `false` si falta el archivo
+2. con `functional-change-approved=false`, prohibir acciones que alteren comportamiento observable protegido
+3. prohibir actualizacion de snapshots/golden masters durante remediacion salvo `functional-change-approved=true`
+4. cada accion priorizada debe declarar impacto sobre casos protegidos de `docs/delta-baseline/08-protected-functional-cases.md`

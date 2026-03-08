@@ -84,6 +84,7 @@ Lee, si existen:
 - `docs/feature-implementation/03-implementation-summary.md`
 - `docs/feature-implementation/04-baseline-impact.md`
 - `docs/feature-implementation/05-next-audit-hand-off.md`
+- `docs/pr-readiness/00-functional-change-approval.md`
 
 ## Resolucion de rutas obligatoria
 Antes de leer o escribir artefactos, resuelve un `docs-root` valido:
@@ -94,6 +95,11 @@ Antes de leer o escribir artefactos, resuelve un `docs-root` valido:
 Todas las rutas de este agente (`docs/legacy-baseline`, `docs/feature-implementation`, `docs/delta-baseline`, `docs/pr-readiness`) deben interpretarse relativas al `docs-root` resuelto.
 
 Si falta un archivo obligatorio, documenta el faltante en el artefacto de salida y continua; no abortes la orquestacion completa por un faltante documental.
+
+## Politica de cambio funcional explicito
+- El archivo `docs/pr-readiness/00-functional-change-approval.md` controla si se permite cambio funcional observable.
+- Valor por defecto si no existe: `functional-change-approved=false`.
+- Solo se permite deriva funcional observable cuando exista `functional-change-approved=true` con justificacion y alcance.
 
 ---
 
@@ -111,6 +117,7 @@ Crea:
 ### Fase 2 - Ejecutar `02-delta-characterization-golden-master-agent`
 Debes solicitarle que:
 - congele el delta funcional del feature ya validado manualmente
+- capture fixtures reales de SoapUI (request/response XML literal)
 - extienda characterization y golden master del nuevo comportamiento
 - deje guardrails explicitos para auditoria/remediacion/gate
 
@@ -122,6 +129,7 @@ Debe producir:
 - `docs/delta-baseline/05-delta-baseline-artifacts.md`
 - `docs/delta-baseline/06-delta-execution-summary.md`
 - `docs/delta-baseline/07-remediation-guardrails.md`
+- `docs/delta-baseline/08-protected-functional-cases.md`
 
 ### Fase 3 - Ejecutar `03-diff-explorer`
 Debes solicitarle que:
@@ -152,6 +160,7 @@ Debe producir:
 Debes solicitarle que:
 - aplique correcciones priorizadas
 - respete baseline historica, delta baseline, contrato y alcance
+- no cambie comportamiento observable protegido (mensaje/formula/snapshot) sin `functional-change-approved=true`
 
 Debe producir:
 - `docs/pr-readiness/05-remediation-summary.md`
@@ -160,6 +169,7 @@ Debe producir:
 Debes solicitarle que:
 - evalue readiness final
 - emita PASS / PASS CON OBSERVACIONES / NO PASS
+- compare before/after de casos protegidos y falle si hay drift no justificado
 - genere checklist de revalidacion manual verificando baseline historica + delta baseline
 
 Debe producir:
@@ -193,6 +203,8 @@ Debes asegurar la existencia de:
 - `docs/delta-baseline/05-delta-baseline-artifacts.md`
 - `docs/delta-baseline/06-delta-execution-summary.md`
 - `docs/delta-baseline/07-remediation-guardrails.md`
+- `docs/delta-baseline/08-protected-functional-cases.md`
+- `docs/pr-readiness/00-functional-change-approval.md`
 - `docs/pr-readiness/01-orchestration-context.md`
 - `docs/pr-readiness/02-diff-summary.md`
 - `docs/pr-readiness/03-audit-findings.md`
@@ -208,6 +220,7 @@ Tu ejecucion es exitosa si:
 - coordinas correctamente la secuencia
 - no saltas etapas
 - dejas delta baseline verificable antes de auditoria/remediacion
+- bloqueas deriva funcional no aprobada explicitamente
 - produces artefactos utiles y consistentes
 - el desarrollador queda listo para revalidar manualmente y abrir PR si corresponde
 

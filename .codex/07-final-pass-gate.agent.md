@@ -151,3 +151,18 @@ Tu ejecución es exitosa si emites un gate final confiable y útil para decidir 
 
 ## Instrucción final de ejecución
 Evalúa el estado final del cambio después de la remediación y emite una decisión clara de readiness, junto con una checklist concreta para la revalidación manual previa al PR.
+
+---
+
+## Addendum de gate anti-drift
+Entradas adicionales obligatorias:
+- `docs/delta-baseline/08-protected-functional-cases.md`
+- `docs/pr-readiness/00-functional-change-approval.md`
+
+Validaciones adicionales obligatorias:
+1. comparar before/after de todos los casos de `docs/delta-baseline/08-protected-functional-cases.md`
+2. asumir `functional-change-approved=false` si falta archivo de aprobacion
+3. si hay drift en comportamiento protegido sin aprobacion explicita, la decision debe ser `NO PASS`
+4. solo con `functional-change-approved=true` y drift justificado puede considerarse `PASS` o `PASS CON OBSERVACIONES`
+
+`docs/pr-readiness/06-final-gate.md` debe incluir una seccion: `Validacion de deriva funcional protegida (before/after)`.

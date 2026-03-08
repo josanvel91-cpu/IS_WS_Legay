@@ -80,6 +80,8 @@ Si existen, lee:
 - `docs/delta-baseline/01-delta-scope.md`
 - `docs/delta-baseline/06-delta-execution-summary.md`
 - `docs/delta-baseline/07-remediation-guardrails.md`
+- `docs/delta-baseline/08-protected-functional-cases.md`
+- `docs/pr-readiness/00-functional-change-approval.md`
 
 Luego inspecciona el workspace real.
 
@@ -213,3 +215,18 @@ Tu ejecución es exitosa si entregas un mapa de cambio claro, priorizado y útil
 
 ## Instrucción final de ejecución
 Analiza el cambio actual del workspace, contrástalo con la baseline y la documentación del feature, e identifica con precisión la superficie de riesgo y los hotspots que deben pasar a auditoría.
+
+---
+
+## Addendum anti-drift obligatorio
+Entradas adicionales obligatorias:
+- `docs/delta-baseline/08-protected-functional-cases.md`
+- `docs/pr-readiness/00-functional-change-approval.md`
+
+Reglas adicionales obligatorias:
+1. comparar el diff contra `docs/delta-baseline/08-protected-functional-cases.md`
+2. identificar potencial drift en `codigo`, `mensaje`, formula/calculo observable y estructura XML
+3. verificar si existe `functional-change-approved=true`
+4. si no hay aprobacion explicita, marcar cualquier drift potencial como hotspot prioritario y bloqueante para auditoria/gate
+
+`docs/pr-readiness/02-diff-summary.md` debe incluir una seccion explicita: `Riesgo de drift funcional protegido`.

@@ -186,12 +186,15 @@ Buscar y leer, si existen:
 `docs/feature-implementation/03-implementation-summary.md`
 `docs/feature-implementation/04-baseline-impact.md`
 `docs/feature-implementation/05-next-audit-hand-off.md`
+`docs/pr-readiness/00-functional-change-approval.md`
+`docs/delta-baseline/08-protected-functional-cases.md`
 
 Debes responder con evidencia:
 - cuÃ¡l fue el mÃ©todo nuevo o modificado
 - dÃ³nde quedÃ³ implementado
 - quÃ© contrato usa
 - quÃ© comportamiento se espera proteger
+- quÃ© request/response reales de SoapUI se usarÃ¡n como fixture literal de protecciÃ³n
 
 ---
 
@@ -233,6 +236,12 @@ Cada caso debe indicar:
 - salida observable esperada hoy
 - motivo de inclusiÃ³n
 
+Debes incluir una matriz de escenarios reales del laboratorio, incluyendo como mÃ­nimo:
+- `deuda=600`
+- `tipo_cliente=N`
+- combinaciones representativas de `estado` y `edad` ya validadas manualmente
+- al menos un caso aprobado y un caso rechazado
+
 ---
 
 ### Fase E â€” DiseÃ±ar o generar Golden Master / Approval Tests del delta
@@ -251,6 +260,8 @@ Puede ser:
 - normalizar solo si es estrictamente necesario
 - documentar toda normalizaciÃ³n
 - no â€œlimpiarâ€ la salida para que se vea mÃ¡s bonita
+- congelar request y response literal de SoapUI para casos protegidos
+- no actualizar snapshots protegidos salvo `functional-change-approved=true`
 
 ### Ejemplos de campos que podrÃ­an requerir normalizaciÃ³n
 Solo si el comportamiento del sistema los vuelve no determinÃ­sticos:
@@ -355,6 +366,7 @@ Debes crear o actualizar una ruta como:
 - `05-delta-baseline-artifacts.md`
 - `06-delta-execution-summary.md`
 - `07-remediation-guardrails.md`
+- `08-protected-functional-cases.md`
 
 ---
 
@@ -415,6 +427,14 @@ Debe incluir:
 - advertencias para el remediator
 - advertencias para el final gate
 
+### 08-protected-functional-cases.md
+Debe incluir:
+- tabla de casos protegidos (ID, objetivo, request SoapUI literal, response esperado literal)
+- referencia a snapshot/golden master asociado por caso
+- declaraciÃ³n de campos protegidos (codigo, mensaje, formula, estructura XML)
+- regla de tolerancia cero para drift sin aprobaciÃ³n explÃ­cita
+- estado de `functional-change-approved` leÃ­do desde `docs/pr-readiness/00-functional-change-approval.md`
+
 ---
 
 ## Criterios de Ã©xito
@@ -426,6 +446,7 @@ Tu ejecuciÃ³n se considera exitosa si logras:
 4. generar golden master / approval tests del nuevo mÃ©todo
 5. documentar lÃ­mites, riesgos y guardrails
 6. dejar una protecciÃ³n Ãºtil para auditorÃ­a y remediaciÃ³n
+7. dejar casos protegidos verificables para detectar drift funcional no aprobado
 
 ---
 

@@ -159,3 +159,17 @@ Tu ejecución es exitosa si el estado del cambio mejora sustancialmente y queda 
 
 ## Instrucción final de ejecución
 Aplica las correcciones del blueprint sobre el cambio actual, respetando contrato, baseline y alcance del feature, y documenta claramente lo resuelto y lo pendiente.
+
+---
+
+## Politica dura anti-drift
+Entradas adicionales obligatorias:
+- `docs/delta-baseline/08-protected-functional-cases.md`
+- `docs/pr-readiness/00-functional-change-approval.md`
+
+Reglas de cumplimiento obligatorio:
+1. antes de aplicar cambios, leer `docs/pr-readiness/00-functional-change-approval.md`; default `functional-change-approved=false`
+2. con `functional-change-approved=false`, esta prohibido cambiar comportamiento observable protegido (`codigo`, `mensaje`, formula, estructura XML/campos de salida)
+3. con `functional-change-approved=false`, esta prohibido actualizar snapshots/approvals/golden masters protegidos
+4. solo con `functional-change-approved=true` y justificacion explicita se permite drift funcional, y debe quedar trazado en `05-remediation-summary.md`
+5. si un fix tecnico exige drift no aprobado, detener esa accion y reportarla como bloqueante
