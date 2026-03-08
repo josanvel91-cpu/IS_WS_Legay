@@ -43,6 +43,7 @@ Analizar los archivos y métodos impactados por el feature para identificar prob
 ## Contexto esperado
 Debes usar como insumo:
 - `docs/pr-readiness/02-diff-summary.md`
+- `docs/delta-baseline/07-remediation-guardrails.md`
 - baseline previa
 - artefactos de feature
 - código actual del workspace
@@ -119,6 +120,8 @@ Lee:
 - `docs/pr-readiness/02-diff-summary.md`
 - `docs/feature-implementation/01-contract-discovery.md`
 - `docs/feature-implementation/05-next-audit-hand-off.md`
+- `docs/delta-baseline/06-delta-execution-summary.md`
+- `docs/delta-baseline/07-remediation-guardrails.md`
 - baseline relevante
 
 ### Fase B — Auditar por hotspot

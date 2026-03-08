@@ -35,6 +35,7 @@ Inspeccionar el repositorio actual y comparar el cambio introducido contra el co
 ## Contexto esperado
 Debes asumir que ya existen:
 - baseline previa en `docs/legacy-baseline/`
+- delta baseline del feature en `docs/delta-baseline/`
 - implementación de feature en `docs/feature-implementation/`
 - pruebas existentes y posiblemente snapshots / approvals
 
@@ -76,6 +77,9 @@ Si existen, lee:
 - `docs/feature-implementation/03-implementation-summary.md`
 - `docs/feature-implementation/04-baseline-impact.md`
 - `docs/feature-implementation/05-next-audit-hand-off.md`
+- `docs/delta-baseline/01-delta-scope.md`
+- `docs/delta-baseline/06-delta-execution-summary.md`
+- `docs/delta-baseline/07-remediation-guardrails.md`
 
 Luego inspecciona el workspace real.
 

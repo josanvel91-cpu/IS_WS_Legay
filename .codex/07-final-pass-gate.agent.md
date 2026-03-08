@@ -41,6 +41,8 @@ Lee:
 - `docs/pr-readiness/04-remediation-blueprint.md`
 - `docs/pr-readiness/05-remediation-summary.md`
 - `docs/feature-implementation/04-baseline-impact.md`
+- `docs/delta-baseline/06-delta-execution-summary.md`
+- `docs/delta-baseline/07-remediation-guardrails.md`
 - baseline relevante
 
 ## Resolucion de rutas obligatoria
@@ -59,7 +61,7 @@ Debes verificar:
 
 1. si los bloqueantes fueron resueltos
 2. si el contrato sigue coherente
-3. si la baseline no fue rota sin justificación
+3. si la baseline historica y delta baseline no fueron rotas sin justificacion
 4. si el cambio está acotado y entendible
 5. si el riesgo residual es aceptable
 6. si el desarrollador ya puede pasar a revalidación manual final
@@ -72,7 +74,7 @@ Debes verificar:
 Solo si:
 - no quedan bloqueantes críticos
 - el contrato sigue compatible
-- la baseline sigue consistente o sus cambios están justificados
+- la baseline historica y delta baseline siguen consistentes o sus cambios estan justificados
 - el riesgo residual es bajo o manejable
 
 ### PASS CON OBSERVACIONES

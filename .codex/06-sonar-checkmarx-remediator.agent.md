@@ -40,6 +40,7 @@ Lee:
 - `docs/pr-readiness/04-remediation-blueprint.md`
 - `docs/feature-implementation/01-contract-discovery.md`
 - `docs/feature-implementation/04-baseline-impact.md`
+- `docs/delta-baseline/07-remediation-guardrails.md`
 - baseline relevante
 
 ## Resolucion de rutas obligatoria
@@ -88,6 +89,7 @@ Orden típico:
 ### Fase C — Mantener compatibilidad
 Debes verificar en cada corrección:
 - ¿rompe baseline?
+- ¿rompe delta baseline?
 - ¿rompe contrato?
 - ¿rompe pruebas esperables?
 - ¿rompe salida legacy que debe mantenerse?

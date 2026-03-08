@@ -38,6 +38,7 @@ Lee:
 - `docs/pr-readiness/03-audit-findings.md`
 - `docs/feature-implementation/01-contract-discovery.md`
 - `docs/feature-implementation/04-baseline-impact.md`
+- `docs/delta-baseline/07-remediation-guardrails.md`
 - baseline relevante
 
 ## Resolucion de rutas obligatoria
@@ -60,6 +61,7 @@ Debes producir un plan que responda:
 4. qué correcciones tienen bajo riesgo y alto valor
 5. qué cosas no deben tocarse
 6. qué riesgos de regresión existen por cada corrección
+7. cómo respetar guardrails de delta baseline
 
 ---
 
