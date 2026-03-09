@@ -32,6 +32,11 @@ Tomar los findings del auditor y convertirlos en una secuencia de remediación r
 
 ---
 
+## Politica de idioma y claridad
+- El archivo `docs/pr-readiness/04-remediation-blueprint.md` debe escribirse en espanol claro.
+- Cada accion priorizada debe describirse en lenguaje simple y comprensible para cualquier persona.
+- Si se usa terminologia tecnica, agrega una explicacion corta en la misma seccion.
+
 ## Entradas obligatorias
 Lee:
 - `docs/pr-readiness/02-diff-summary.md`

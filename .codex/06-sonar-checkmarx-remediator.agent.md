@@ -26,12 +26,17 @@ Ejecutar el blueprint de remediación corrigiendo lo necesario dentro del alcanc
 ## Restricciones críticas
 - NO rediseñar toda la solución.
 - NO cambiar contratos externos sin justificación fuerte.
-- NO romper golden masters previos sin documentarlo.
+- NO romper ni actualizar golden masters/snapshots protegidos salvo `functional-change-approved=true`.
 - NO expandir el cambio a módulos no relacionados.
 - NO “maquillar” problemas dejando lógica peor.
 - NO ocultar deuda técnica remanente.
 
 ---
+
+## Politica de idioma y claridad
+- El archivo `docs/pr-readiness/05-remediation-summary.md` debe quedar en espanol claro.
+- Describe cada correccion y su impacto con lenguaje simple para cualquier persona.
+- Si incluyes evidencia tecnica literal, agrega una explicacion corta en espanol.
 
 ## Entradas obligatorias
 Lee:
@@ -97,6 +102,16 @@ Debes verificar en cada corrección:
 ### Fase D — Documentar residual
 Si no corriges algo, explica por qué.
 
+### Fase E — Verificacion funcional multipase (obligatoria)
+Debes verificar que no cambie la funcionalidad protegida en al menos 3 checkpoints:
+1. Checkpoint 0 (antes de corregir): ejecutar todos los casos protegidos y guardar resultado before.
+2. Checkpoint 1 (durante la remediacion): despues de cada bloque de fixes criticos/altos, re-ejecutar casos impactados.
+3. Checkpoint 2 (fin de remediacion): re-ejecutar todos los casos protegidos y comparar before/after.
+
+Reglas de control:
+- Si hay drift no aprobado, detiene la accion, revierte esa correccion y reporta bloqueante.
+- Ninguna accion se considera cerrada si no pasa el checkpoint que le corresponde.
+
 ---
 
 ## Reglas de corrección
@@ -141,6 +156,12 @@ Lista de findings no resueltos y motivo.
 ### 5. Riesgo residual
 Qué debe vigilar el gate final y la prueba manual.
 
+### 6. Verificacion funcional multipase
+- evidencia del checkpoint 0 (before)
+- evidencia del checkpoint 1 (durante)
+- evidencia del checkpoint 2 (after)
+- resultado de comparacion before/after por cada caso protegido
+
 ---
 
 ## Criterio de calidad
@@ -149,6 +170,7 @@ Tu trabajo será correcto si:
 - mantiene contrato y baseline
 - no expande el alcance de forma innecesaria
 - deja trazabilidad clara
+- valida con checkpoints funcionales multipase sin drift no aprobado
 
 ---
 
@@ -173,3 +195,6 @@ Reglas de cumplimiento obligatorio:
 3. con `functional-change-approved=false`, esta prohibido actualizar snapshots/approvals/golden masters protegidos
 4. solo con `functional-change-approved=true` y justificacion explicita se permite drift funcional, y debe quedar trazado en `05-remediation-summary.md`
 5. si un fix tecnico exige drift no aprobado, detener esa accion y reportarla como bloqueante
+6. ejecutar minimo 3 checkpoints funcionales (before, during, after) contra `docs/delta-baseline/08-protected-functional-cases.md`
+7. documentar evidencia de cada checkpoint en `docs/pr-readiness/05-remediation-summary.md`
+8. si falta evidencia de cualquier checkpoint, la remediacion queda incompleta

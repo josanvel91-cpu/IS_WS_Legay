@@ -40,6 +40,11 @@ Analizar los archivos y métodos impactados por el feature para identificar prob
 
 ---
 
+## Politica de idioma y claridad
+- El artefacto `docs/pr-readiness/03-audit-findings.md` debe quedar en espanol claro y directo.
+- Debe poder ser entendido por una persona no tecnica; explica cada riesgo en lenguaje simple.
+- Si incluyes evidencia literal (stack trace, XML, reglas de herramienta), agrega una explicacion breve en espanol.
+
 ## Contexto esperado
 Debes usar como insumo:
 - `docs/pr-readiness/02-diff-summary.md`
@@ -56,6 +61,20 @@ Resuelve un `docs-root` antes de operar:
 
 Interpreta todas las rutas `docs/...` relativas al `docs-root` resuelto.
 Si falta una entrada, documenta el faltante en el reporte y continua con evidencia disponible.
+
+---
+
+## Ejecucion con subauditorias internas (obligatoria)
+Debes ejecutar minimo 2 subauditorias y recomendado 3 para maximizar cobertura:
+
+1. Subauditoria de seguridad (vulnerabilidades y exposicion de datos).
+2. Subauditoria de calidad/robustez (smells, validaciones, nulls, edge cases).
+3. Subauditoria de contrato/drift (codigo, mensaje, formula y estructura XML protegida).
+
+Reglas:
+- Si el entorno soporta subagentes, ejecutalos; si no, ejecuta las subauditorias manualmente dentro de este agente.
+- Consolida resultados en un unico reporte sin duplicados.
+- Si dos subauditorias difieren en severidad para el mismo hallazgo, conserva la severidad mayor y documenta el motivo.
 
 ---
 
@@ -124,10 +143,13 @@ Lee:
 - `docs/delta-baseline/07-remediation-guardrails.md`
 - baseline relevante
 
-### Fase B — Auditar por hotspot
-Empieza por los métodos y archivos de mayor prioridad.
+### Fase B — Ejecutar subauditorias por hotspot
+Ejecuta las subauditorias internas sobre metodos y archivos de mayor prioridad.
 
-### Fase C — Clasificar hallazgos
+### Fase C — Consolidar y deduplicar hallazgos
+Unifica hallazgos de todas las subauditorias y elimina duplicados.
+
+### Fase D — Clasificar hallazgos
 Para cada hallazgo, asigna:
 - categoría
 - severidad
@@ -137,14 +159,14 @@ Para cada hallazgo, asigna:
 - evidencia concreta
 - por qué importa
 
-### Fase D — Separar bloqueantes vs no bloqueantes
+### Fase E — Separar bloqueantes vs no bloqueantes
 Debes distinguir:
 - crítico
 - alto
 - medio
 - bajo
 
-### Fase E — Preparar insumo para blueprint
+### Fase F — Preparar insumo para blueprint
 Los hallazgos deben ser directamente remediables.
 
 ---
@@ -206,6 +228,12 @@ Lista de hallazgos que deben resolverse antes del gate final.
 
 ### 5. Hallazgos diferibles
 Lista de hallazgos que podrían documentarse como deuda remanente.
+
+### 6. Cobertura por subauditoria
+Por cada subauditoria ejecutada:
+- alcance cubierto
+- cantidad de hallazgos encontrados
+- gaps o limites detectados
 
 ---
 

@@ -34,6 +34,11 @@ Evaluar el estado final del cambio tras la remediación y decidir:
 
 ---
 
+## Politica de idioma y claridad
+- Los archivos `docs/pr-readiness/06-final-gate.md` y `docs/pr-readiness/07-human-retest-checklist.md` deben escribirse en espanol claro.
+- La decision final y sus motivos deben ser entendibles para una persona no tecnica.
+- Si incluyes evidencia tecnica literal, agrega una explicacion simple debajo.
+
 ## Entradas obligatorias
 Lee:
 - `docs/pr-readiness/02-diff-summary.md`
@@ -164,5 +169,6 @@ Validaciones adicionales obligatorias:
 2. asumir `functional-change-approved=false` si falta archivo de aprobacion
 3. si hay drift en comportamiento protegido sin aprobacion explicita, la decision debe ser `NO PASS`
 4. solo con `functional-change-approved=true` y drift justificado puede considerarse `PASS` o `PASS CON OBSERVACIONES`
+5. si falta evidencia before/after completa de casos protegidos, la decision debe ser `NO PASS`
 
 `docs/pr-readiness/06-final-gate.md` debe incluir una seccion: `Validacion de deriva funcional protegida (before/after)`.

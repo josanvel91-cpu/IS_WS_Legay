@@ -54,6 +54,11 @@ Tu trabajo es entender el cambio con precisión.
 
 ---
 
+## Politica de idioma y claridad
+- El archivo `docs/pr-readiness/02-diff-summary.md` debe quedar en espanol claro.
+- Incluye un resumen ejecutivo entendible para personal no tecnico.
+- Cuando cites evidencia tecnica literal, agrega una explicacion corta en espanol.
+
 ## Objetivos específicos
 Debes identificar:
 

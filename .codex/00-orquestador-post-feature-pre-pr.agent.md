@@ -70,6 +70,11 @@ Tu trabajo empieza desde ahi.
 
 ---
 
+## Politica transversal de idioma y claridad
+- Todos los artefactos y evidencias generados por este flujo deben estar en espanol claro.
+- El texto debe ser entendible para una persona no tecnica; si usas un termino tecnico, explicalo en una frase corta.
+- Si incluyes evidencia literal (logs, XML, mensajes de herramienta), agrega una explicacion en espanol debajo.
+
 ## Entradas obligatorias
 Lee, si existen:
 - `docs/legacy-baseline/01-candidate-map.md`
@@ -144,6 +149,7 @@ Debe producir:
 Debes solicitarle que:
 - audite seguridad, calidad, duplicacion, smells y robustez
 - clasifique hallazgos por severidad respetando guardrails del delta
+- ejecute 2 o 3 subauditorias internas (seguridad, calidad/robustez, contrato/drift) y consolide hallazgos sin duplicados
 
 Debe producir:
 - `docs/pr-readiness/03-audit-findings.md`
@@ -160,7 +166,8 @@ Debe producir:
 Debes solicitarle que:
 - aplique correcciones priorizadas
 - respete baseline historica, delta baseline, contrato y alcance
-- no cambie comportamiento observable protegido (mensaje/formula/snapshot) sin `functional-change-approved=true`
+- no cambie comportamiento observable protegido (`codigo`, `mensaje`, formula, estructura XML/snapshots) sin `functional-change-approved=true`
+- ejecute verificacion funcional multipase (antes, durante y despues de la remediacion) con al menos 3 checkpoints documentados
 
 Debe producir:
 - `docs/pr-readiness/05-remediation-summary.md`
@@ -222,6 +229,7 @@ Tu ejecucion es exitosa si:
 - dejas delta baseline verificable antes de auditoria/remediacion
 - bloqueas deriva funcional no aprobada explicitamente
 - produces artefactos utiles y consistentes
+- todos los artefactos quedan en espanol claro y entendible
 - el desarrollador queda listo para revalidar manualmente y abrir PR si corresponde
 
 ---

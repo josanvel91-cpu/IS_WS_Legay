@@ -43,6 +43,11 @@ Existe para:
 
 ---
 
+## Politica de idioma y claridad
+- Todo artefacto de `docs/delta-baseline/` debe escribirse en espanol claro.
+- Cada archivo debe incluir un breve resumen en lenguaje simple para personas no tecnicas.
+- Cuando se pegue request/response literal de SoapUI, agrega debajo una explicacion corta en espanol.
+
 ## Contexto esperado
 Este agente se ejecuta despuÃ©s de estas etapas:
 
